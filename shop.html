@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - BeautyGlow</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background-color: #d6336c;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #d6336c;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">BeautyGlow</div>
+    <ul class="nav-links">
+      <li><a href="index2.html">Beranda</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Keranjang</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <h2>Produk Lip Cream & Kosmetik</h2>
+
+  <section class="product-grid">
+    <div class="product-card">
+      <img src="foto1.jpeg" alt="lip cream OMG" />
+      <h3>lip cream OMG</h3>
+      <p>Rp22.000</p>
+      <button class="btn" onclick="buyNow('lip cream OMG', 22000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card">
+      <img src="foto2.jpeg" alt="lip cream IMPLORA"/>
+      <h3>lip cream IMPLORA</h3>
+      <p>Rp18.000</p>
+      <button class="btn" onclick="buyNow('lip cream IMPLORA', 18000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card">
+      <img src="gambar4.jpeg" alt="lip cream WARDAH" />
+      <h3>lip cream WARDAH</h3>
+      <p>Rp35.000</p>
+      <button class="btn" onclick="buyNow('lip cream WARDAH', 35000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card">
+      <img src="gambar5.jpeg" alt="lip cream HANASUI" />
+      <h3>lip cream HANASUI</h3>
+      <p>Rp29.000</p>
+      <button class="btn" onclick="buyNow('lip cream HANASUI', 29000)">Beli Sekarang</button>
+    </div>
+  </section>
+
+  <script>
+    function buyNow(name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'cart.html';
+    }
+  </script>
+
+  <footer>
+    <p style="text-align:center;">&copy; 2025 BeautyGlow</p>
+  </footer>
+</body>
+</html>
