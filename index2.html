@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beranda - BeautyGlow</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+    }
+
+    nav {
+      background-color: #d6336c;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-image: url('foto3.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .hero h1, .hero p, .hero a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      background-color: #f06292;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .desc {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .social {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: #d6336c;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    footer {
+      background-color: #fce4ec;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><strong>BeautyGlow</strong></div>
+    <ul class="nav-links">
+      <li><a href="index2.html">Beranda</a></li>
+      <li><a href="shop2.html">Shop</a></li>
+      <li><a href="cart.html">Keranjang</a></li>
+      <li><a href="checkout2.html">Checkout</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Selamat Datang di BeautyGlow</h1>
+    <p>Kami percaya kecantikan adalah tentang kepercayaan diri.</p>
+    <a href="shop2.html" class="btn">Belanja Sekarang</a>
+  </header>
+
+  <section class="desc">
+    <h2>Tentang Kami</h2>
+    <p>
+      BeautyGlow adalah destinasi kecantikanmu. Kami hadir untuk para wanita modern
+      yang ingin tampil elegan, lembut, dan memikat.  
+      Produk kami dipilih secara hati-hati — lip cream yang
+      bukan hanya mempercantik, tapi juga memancarkan aura.
+    </p>
+    <p>
+      Jadikan setiap hari spesial dengan sentuhan warna dari BeautyGlow 🌸✨
+    </p>
+  </section>
+
+  <section class="social">
+    <h3>Temui Kami di Media Sosial</h3>
+    <a href="https://www.instagram.com/kurniawatielia797/?__pwa=1" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/6285784507643" target="_blank">📞 WhatsApp</a>
+  </section>
+
+  <footer>
+    &copy; 2025 BeautyGlow. Tetap Bersinar ✨
+  </footer>
+
+</body>
+</html>

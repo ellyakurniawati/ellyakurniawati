@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keranjang - BeautyGlow</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">BeautyGlow</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Keranjang</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <h2 style="text-align: center;">Keranjang Belanja Anda</h2>
+  <section style="padding: 20px;">
+    <ul id="cart-list"></ul>
+    <p id="total"></p>
+
+    <div id="buttons">
+      <button onclick="checkout()" class="btn">Beli Sekarang</button>
+      <button onclick="clearCart()" class="btn" style="background-color: gray;">Hapus Keranjang</button>
+    </div>
+  </section>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartList = document.getElementById("cart-list");
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartList.innerHTML = "<li>Keranjang kosong.</li>";
+      document.getElementById("buttons").style.display = "none";
+    } else {
+      cart.forEach((item) => {
+        let li = document.createElement("li");
+        li.textContent = `${item.name} - Rp${item.price.toLocaleString("id-ID")}`;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+      document.getElementById("total").textContent = `Total: Rp${total.toLocaleString("id-ID")}`;
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      location.reload();
+    }
+
+    function checkout() {
+      // Redirect langsung ke halaman checkout
+      window.location.href = "checkout.html";
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 BeautyGlow. All rights reserved.</p>
+  </footer>
+</body>
+</html>
